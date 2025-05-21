@@ -1,0 +1,95 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Instagram, Spotify, Mail, Music, Video, Calendar, Camera } from "lucide-react";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      <header className="flex justify-between items-center p-4 border-b border-gray-800">
+        <h1 className="text-2xl font-bold">Resenha Garantida</h1>
+        <nav className="space-x-4">
+          <a href="#home">Home</a>
+          <a href="#agenda">Agenda</a>
+          <a href="#musicas">Músicas</a>
+          <a href="#clipes">Clipes</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
+
+      <section id="home" className="p-8 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Último Lançamento</h2>
+        <Card className="mx-auto max-w-xl bg-gray-900">
+          <CardContent className="p-6">
+            <p className="text-xl mb-2">Confira nossa nova música: "Campari e Paredão"</p>
+            <Button className="bg-red-600 hover:bg-red-700 text-white" asChild>
+              <a href="https://onerpm.link/225123022003" target="_blank">Ouvir Agora</a>
+            </Button>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section id="agenda" className="p-8 bg-gray-950">
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Calendar size={20} />Agenda do Mês</h2>
+        <ul className="space-y-2">
+          <li>01/06 - Festa de São João - Salvador/BA</li>
+          <li>07/06 - Arraiá da Capital - Recife/PE</li>
+          <li>15/06 - Show no Pátio - Fortaleza/CE</li>
+        </ul>
+      </section>
+
+      <section id="musicas" className="p-8">
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Music size={20} />Músicas</h2>
+        <div className="space-y-4">
+          <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/artist/6iqwmV49CUxk60ZjKvc8vO?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <ul className="space-y-2">
+            <li><a href="https://onerpm.link/225123022003" target="_blank">Campari e Paredão</a></li>
+            <li><a href="https://onerpm.link/334640424185" target="_blank">MTG Nem pensa em namorar</a></li>
+            <li><a href="https://onerpm.link/379035110533" target="_blank">Calcinha de Renda</a></li>
+            <li><a href="https://onerpm.link/677365287258" target="_blank">A culpa é sua</a></li>
+            <li><a href="https://onerpm.link/161963923197" target="_blank">Pra Esquecer Teu Ex</a></li>
+            <li><a href="https://onerpm.link/773126690306" target="_blank">Hoje Tem Resenha</a></li>
+            <li><a href="https://onerpm.link/522291235165" target="_blank">Tava Doidão (Remix)</a></li>
+            <li><a href="https://onerpm.link/964816546130" target="_blank">Tava Doidão</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="clipes" className="p-8 bg-gray-950">
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Video size={20} />Clipes</h2>
+        <div className="space-y-4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/Z1sWxVnUmrY" title="Ela Só Quer Revoar" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ht0apI0k3To" title="Coração Bagunçado" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+      </section>
+
+      <section id="galeria" className="p-8">
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Camera size={20} />Galeria de Fotos</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="/fotos/show1.jpg" alt="Show 1" className="rounded-2xl" />
+          <img src="/fotos/show2.jpg" alt="Show 2" className="rounded-2xl" />
+        </div>
+      </section>
+
+      <section id="contato" className="p-8 bg-gray-950">
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><Mail size={20} />Contato</h2>
+        <ul className="space-y-2">
+          <li><a href="https://wa.me/5511999999999" target="_blank">Contratação de Shows</a></li>
+          <li><a href="https://wa.me/5511888888888" target="_blank">Envio de Composições</a></li>
+          <li><a href="https://wa.me/5511777777777" target="_blank">Solicitar Presskit</a></li>
+        </ul>
+      </section>
+
+      <footer className="p-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-800">
+        <p>&copy; {new Date().getFullYear()} Resenha Garantida</p>
+        <div className="flex gap-4 mt-2 md:mt-0">
+          <a href="https://www.instagram.com/gruporesenhagarantida" target="_blank"><Instagram /></a>
+          <a href="https://www.tiktok.com/@gruporesenhagarantida?_t=ZM-8wXh8JlGtZV&_r=1" target="_blank">
+            <img src="/icons/tiktok.svg" alt="TikTok" className="w-5 h-5" />
+          </a>
+          <a href="https://open.spotify.com/intl-pt/artist/6iqwmV49CUxk60ZjKvc8vO" target="_blank"><Spotify /></a>
+        </div>
+      </footer>
+    </div>
+  );
+}
